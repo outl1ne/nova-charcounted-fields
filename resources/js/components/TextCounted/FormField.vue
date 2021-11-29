@@ -1,5 +1,5 @@
 <template>
-    <default-field :field="field" :errors="errors">
+    <default-field :field="field">
         <template slot="field">
             <div class="relative">
                 <input
@@ -11,6 +11,7 @@
                     :required="required"
                     v-model="value"
                     v-bind="extraAttributes"
+                    @input="handleChange"
                 />
               <div class="flex space-x-2">
                 <p v-if="hasError" class="flex-1 help-text error-text my-2 text-danger">
@@ -19,8 +20,6 @@
                 <charcounter :value="value" :max-chars="field.maxChars" :warning-threshold="field.warningAt"></charcounter>
               </div>
             </div>
-
-
         </template>
     </default-field>
 </template>
@@ -36,9 +35,6 @@
 
         components: {
             Charcounter
-        },
-        created () {
-          console.log(field)
         },
         computed: {
             defaultAttributes() {

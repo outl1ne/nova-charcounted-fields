@@ -1,5 +1,5 @@
 <template>
-    <default-field :field="field" :errors="errors" :full-width-content="true">
+    <default-field :field="field" :full-width-content="true">
         <template slot="field">
             <div class="relative">
                 <textarea
@@ -10,6 +10,7 @@
                     :required="required"
                     v-model="value"
                     v-bind="extraAttributes"
+                    @input="handleChange"
                 ></textarea>
                 <div class="flex space-x-2">
                   <p v-if="hasError" class="flex-1 help-text error-text my-2 text-danger">
@@ -33,9 +34,6 @@
 
         components: {
             Charcounter
-        },
-        created () {
-          console.log(field)
         },
         computed: {
             defaultAttributes() {
