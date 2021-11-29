@@ -1,4 +1,4 @@
-Nova.booting((Vue, router) => {
+Nova.booting((Vue, router, store) => {
     Vue.component('index-text-counted', require('./components/TextCounted/IndexField'));
     Vue.component('detail-text-counted', require('./components/TextCounted/DetailField'));
     Vue.component('form-text-counted', require('./components/TextCounted/FormField'));
