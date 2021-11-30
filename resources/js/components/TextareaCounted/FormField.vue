@@ -35,6 +35,7 @@
         components: {
             Charcounter
         },
+
         computed: {
             defaultAttributes() {
                 return {
