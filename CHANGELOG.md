@@ -9,9 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Fixed compatibility with Nova 3
-- Improved error message styling
-- Fixed slug field support
+- Fixed compatibility with Nova 3 (thanks to [@ErenPhayte](https://github.com/ErenPhayte))
+- Improved error message styling (thanks to [@ErenPhayte](https://github.com/ErenPhayte))
+- Fixed slug field support (thanks to [@ErenPhayte](https://github.com/ErenPhayte))
 - Updated packages
 
 ## [1.0.0] - 2021-11-12
