@@ -1,5 +1,5 @@
 <template>
-    <p class="text-right font-bold opacity-50 text-80 text-xs mt-2">
+    <p class="flex-1 text-right font-bold opacity-50 text-80 text-xs mt-2">
         <span :class="indicatorClass">{{ value.length }}</span><span v-if="maxChars"> / {{ maxChars }}</span>
     </p>
 </template>

@@ -1,23 +1,24 @@
 <template>
-    <default-field :field="field" :errors="errors" :full-width-content="true">
+    <default-field :field="field" :full-width-content="true">
         <template slot="field">
             <div class="relative">
                 <textarea
                     class="w-full form-control form-input form-input-bordered py-3 h-auto"
                     :id="field.attribute"
+                    :dusk="field.attribute"
                     :readonly="readonly"
                     :required="required"
                     v-model="value"
                     v-bind="extraAttributes"
+                    @input="handleChange"
                 ></textarea>
-
-                <charcounter :value="value" :max-chars="field.maxChars" :warning-threshold="field.warningAt"></charcounter>
-
+                <div class="flex space-x-2">
+                  <p v-if="hasError" class="flex-1 help-text error-text my-2 text-danger">
+                    {{ firstError }}
+                  </p>
+                  <charcounter :value="value" :max-chars="field.maxChars" :warning-threshold="field.warningAt"></charcounter>
+                </div>
             </div>
-
-            <p v-if="hasError" class="my-2 text-danger">
-                {{ firstError }}
-            </p>
         </template>
     </default-field>
 </template>
